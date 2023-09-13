@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "comprobador.h": "c",
+        "miner.h": "c",
+        "mman.h": "c",
+        "stat.h": "c",
+        "monitor.h": "c",
+        "string.h": "c",
+        "mqueue.h": "c",
+        "stdio.h": "c",
+        "errno.h": "c",
+        "random": "c"
+    }
+}
