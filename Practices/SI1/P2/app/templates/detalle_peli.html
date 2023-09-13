@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+    
+<head>
+    <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+</head>
+
+{% block content %}
+    <div class="content">
+        <div class="imgDetalle">
+            <a href="#">
+                <img src="{{url_for('static', filename=peli.poster)}}" width="300" height="400" alt="Image">
+            </a>
+            <div class="posBoton">
+                <form action="{{ url_for('addToCarrito', id = peli['id']) }}" method="post">
+                    <input class="myButton" type="submit" value="Añadir al carrito">
+                </form>
+            </div>
+        </div>
+        
+        <div class="dataPeli">
+            <h2 class="x">Título: {{peli['title']}}</h2>
+            <h2 class="x">Géneros: {{peli['genres']}}</h2>
+            <h2 class="x">Director: {{peli['director']}}</h2>
+            <h2 class="x">Año: {{peli['year']}}</h2>
+            <h2 class="x">Precio: {{peli['price']}}</h2>
+            <h2 class="x">País: {{peli['countries']}}</h2>
+            <h2 class="x">Idiomas: {{peli['languages']}}</h2>
+            <h2 class="x">Descripción del producto: {{peli['description']}}</h2>
+        </div>
+        
+    </div>
+    {% if session['usuario'] %}
+        <div class="voto">
+            <form action="{{ url_for('valoraPeli', id = peli['movieID'] ) }}" method="post">
+                <select name="valora">
+                    <option value="" selected disabled hidden>Select</option>
+                    <option value="1">*</option>
+                    <option value="2">**</option>
+                    <option value="3">***</option>
+                    <option value="4">****</option>
+                    <option value="5">*****</option>
+                </select>
+            
+            <input id = myButton class="myButton" type="submit" value="Valorar">
+            </form>
+            <form action="{{ url_for('borraValoracion', id = peli['movieID'] )}}" method="post">
+                <input id = myButton class="myButton" type="submit" value="Borrar mi voto">
+            </form>
+        </div>
+        
+    {% endif%}
+
+    <div class="voto"><p class="x">Valoración media (sobre 5): {{peli['ratingmean']}}</p></div>
+    <div class="voto"><p class="x">Número de valoraciones: {{peli['ratingcount']}}</p></div>
+    
+{% endblock %}
+
+</html>

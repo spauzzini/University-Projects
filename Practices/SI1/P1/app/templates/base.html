@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%} Virtual Daisy Videoclub {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='estilo.css') }}/>
+</head>
+
+<body>
+    <header class="cabecera">
+        
+        <div class="esquinaIzda">
+            <img src="{{url_for('static', filename='images/logo.png')}}" width="75" height="75" alt="Image">
+            <h1>
+                <span> V </span> <span> irtual </span>
+                <span> D </span> <span> aisy </span>
+                <span> V </span> <span> ideoclub </span>
+            </h1>
+            
+        </div>
+        <div class="esquinaDcha">
+            {% if not session['usuario'] %}
+                <div class="Sign">
+                    <div class="nav">
+                        <div class="nav-links"> 
+                            <ul>
+                                <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <img class="icono" src="{{url_for('static', filename='images/user.png')}}" width="60" height="60" alt="Image">
+                <div class="usuario">{{ session['usuario'] }} </div>
+            {% endif%}
+            
+        </div>
+    </header>
+
+    <div class="sideMenu">
+        <div class="optionsSideMenu">
+            <a href="{{ url_for('index') }}">
+                <div class="option">
+                    <img src="{{url_for('static', filename='images/lobby.png')}}" width="50" height="50" alt="Image">
+                </div>
+                <p>Lobby</p>
+            </a>
+            
+            <a href="../cesta">
+                <div class="option">
+                    <img src="{{url_for('static', filename='images/carrito.png')}}" width="50" height="50" alt="Image">
+                </div>
+                <p>Cesta</p>
+            </a>
+
+            {% if session['usuario'] %}
+                <a href="{{ url_for('goPerfil') }}">
+                    <div class="option">
+                        <img src="{{url_for('static', filename='images/perfil.png')}}" width="50" height="50" alt="Image">
+                    </div>
+                    <p>Perfil</p>
+                </a>
+
+                <a href="{{ url_for('historial') }}">
+                    <div class="option">
+                        <img src="{{url_for('static', filename='images/historial.png')}}" width="50" height="50" alt="Image">
+                    </div>
+                    <p>Historial</p>
+                </a>
+
+                <a href="{{ url_for('logout') }}">
+                    <div class="option">
+                        <img src="{{url_for('static', filename='images/logout.png')}}" width="50" height="50" alt="Image">
+                    </div>
+                    <p>Log out</p>
+                </a>
+            {% endif%}
+        </div>
+    </div>
+    
+    <footer class="main-footer">
+        <p> paula.beltranm@estudiante.uam.es & elena.balseiro@estudiante.uam.es </p>
+    </footer>
+
+    {% block content%} {% endblock %}
+</body>
+</html>

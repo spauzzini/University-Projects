@@ -1,0 +1,50 @@
+<!DOCTYPE HTML> 
+<!--
+ Ejemplo de MongoDB
+-->
+<HTML> 
+  <HEAD> 
+	  <META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8"> 
+	  <TITLE>Ejemplo de MongoDB</TITLE>
+  </HEAD> 
+
+  <BODY>
+ 
+    <h2> Ejemplo de MongoDB</h2>
+
+    <!-- TODO: tabla de películas Consulta 1 -->
+    <h3> Películas Comedia entre 1990 y 1992 </h3>
+    {% for movie in movies[0][0] %}
+        <ul>
+            <li><b>{{ movie.title }}</b> from {{ movie.year }}<br></li>
+            <b>Genres:</b> {% for g in movie.genres %} {{ g }}, {% endfor %}<br>
+            <b>Directors:</b> {% for d in movie.directors %} {{ d }}, {% endfor %}<br>
+            <b>Actors:</b> {% for a in movie.actors %} {{ a }}, {% endfor %}<br>
+            <b>Related:</b> {% for r in movie.related_movies %} {{ r.title }}, {% endfor %}<br>
+        </ul>
+    {% endfor %}
+    <!-- TODO: tabla de películas Consulta 2 -->
+    <h3> Películas Acción 1995, 1997, 1998 que empiecen por 'The' </h3>
+    {% for movie in movies[1][0] %}
+        <ul>
+            <li><b>{{ movie.title }}</b> from {{ movie.year }}<br></li>
+            <b>Genres:</b> {% for g in movie.genres %} {{ g }}, {% endfor %}<br>
+            <b>Directors:</b> {% for d in movie.directors %} {{ d }}, {% endfor %}<br>
+            <b>Actors:</b> {% for a in movie.actors %} {{ a }}, {% endfor %}<br>
+            <b>Related:</b> {% for r in movie.related_movies %} {{ r.title }}, {% endfor %}<br>
+        </ul>
+    {% endfor %}
+    <!-- TODO: tabla de películas Consulta 3 -->
+    <h3> Películas donde están tanto DarrenMcAree como Katie Lockett en el reparto</h3>
+    {% for movie in movies[2][0] %}
+        <ul>
+            <li><b>{{ movie.title }}</b> from {{ movie.year }}<br></li>
+            <b>Genres:</b> {% for g in movie.genres %} {{ g }}, {% endfor %}<br>
+            <b>Directors:</b> {% for d in movie.directors %} {{ d }}, {% endfor %}<br>
+            <b>Actors:</b> {% for a in movie.actors %} {{ a }}, {% endfor %}<br>
+            <b>Related:</b> {% for r in movie.related_movies %} {{ r.title }}, {% endfor %}<br>
+        </ul>
+    {% endfor %}
+
+  </BODY>
+</HTML>

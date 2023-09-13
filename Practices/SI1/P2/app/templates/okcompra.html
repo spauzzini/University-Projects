@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+<head>
+    <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+</head>
+
+{% block content %}
+    <div class="acceptedval">
+        <p> ¡¡ Tu compra se ha realizado con éxito !! </p>
+        <a href="{{ url_for('index') }}">
+            <input class="myButton" type="submit" value="Aceptar">
+        </a>
+    </div>
+{% endblock %}
+</html>

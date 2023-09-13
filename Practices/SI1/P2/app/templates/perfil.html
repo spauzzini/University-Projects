@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+<head>
+    <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+</head>
+
+{% block content %}
+    
+    <div class="perfilinfo">
+        <p> Nombre de usuario </p>
+        <div class="usuario">{{ session['usuario'] }} </div>
+        
+        <p> Correo electrónico </p>
+        <div class="usuario"> {{mail}} </div>
+
+        <p> Tarjeta de crédito </p>
+        <div class="usuario"> {{ccard}} </div>
+
+        <p> Dirección </p>
+        <div class="usuario">{{address}} </div>
+
+        <p> Saldo actual </p>
+        <div class="usuario">{{saldo}} </div>
+        <form action="{{ url_for('addSaldo') }}" method="post">
+            <p> Añadir saldo </p>
+            <input name="cantidad" type="text">
+            <input class="myButton" type="submit" value="Confirmar">
+        </form>
+    </div>
+
+{% endblock %}
+</html>

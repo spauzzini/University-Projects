@@ -1,0 +1,220 @@
+{
+    "peliculas": [
+        {
+            "id": 1,
+            "titulo": "Mamma mia",
+            "poster": "images/mammamia.jpg",
+            "director": "Phyllida Lloyd",
+            "precio": 12.99,
+            "categoria": "Musical",
+            "a\u00f1o": 2008,
+            "media": 3.0,
+            "nvotos": 2,
+            "actores": [
+                {
+                    "nombre": "Meryl Streep",
+                    "personaje": "Donna Sheridan",
+                    "foto": "imagenes/meryl.jpg"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "titulo": "Grease",
+            "poster": "images/grease.jpg",
+            "director": "Randal Kleiser",
+            "precio": 18.99,
+            "categoria": "Musical",
+            "a\u00f1o": 1971,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "titulo": "Blue Velvet",
+            "poster": "images/bluevelvet.jpg",
+            "director": "David Lynch",
+            "precio": 9.99,
+            "categoria": "Thriller",
+            "a\u00f1o": 1986,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "titulo": "Pulp Fiction",
+            "poster": "images/pulpfiction.jpg",
+            "director": "Quentin Tarantino",
+            "precio": 7.99,
+            "categoria": "Thriller",
+            "a\u00f1o": 1995,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "titulo": "Avatar",
+            "poster": "images/avatar.jpg",
+            "director": "James Cameron",
+            "precio": 4.99,
+            "categoria": "Fantasia",
+            "a\u00f1o": 2009,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "titulo": "Harry Potter y la piedra filosofal",
+            "poster": "images/harryPotter.jpg",
+            "director": "Chris Columbus",
+            "precio": 4.99,
+            "categoria": "Fantasia",
+            "a\u00f1o": 2001,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "titulo": "Avengers: Endgame",
+            "poster": "images/endgame.jpg",
+            "director": "Anthony Russo y Joe Russo",
+            "precio": 11.99,
+            "categoria": "Sci-fi",
+            "a\u00f1o": 2019,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "titulo": "Jurassic World: Dominion",
+            "poster": "images/jurasicWorld.jpg",
+            "director": "Colin Trevorrow",
+            "precio": 10.99,
+            "categoria": "Sci-fi",
+            "a\u00f1o": 2022,
+            "media": 3.0,
+            "nvotos": 2,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "titulo": "Crep\u00fasculo",
+            "poster": "images/twilight.jpg",
+            "director": "Catherine Hardwicke",
+            "precio": 5.99,
+            "categoria": "Romance",
+            "a\u00f1o": 2008,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "titulo": "Ciudades de papel",
+            "poster": "images/ciudadesPapel.jpg",
+            "director": "Jake Schreier",
+            "precio": 3.99,
+            "categoria": "Romance",
+            "a\u00f1o": 2015,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "titulo": "The Fast and the Furious",
+            "poster": "images/fastAndFurious.jpg",
+            "director": "Rob Cohen",
+            "precio": 6.99,
+            "categoria": "Accion",
+            "a\u00f1o": 2001,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "titulo": "Piratas del Caribe",
+            "poster": "images/piratasCaribe.jpg",
+            "director": "Gore Verbinski",
+            "precio": 8.99,
+            "categoria": "Accion",
+            "año": 2003,
+            "media": 0,
+            "nvotos": 0,
+            "actores": [
+                {
+                    "nombre": "Jake Lloyd",
+                    "personaje": "Anakin Skywalker",
+                    "foto": "imagenes/anakin.jpg"
+                }
+            ]
+        }
+    ]
+}

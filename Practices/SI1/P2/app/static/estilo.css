@@ -1,0 +1,379 @@
+body {
+  background-color: hwb(0 17% 83%);
+  font-family: 'poppins';
+  margin: 0;
+  justify-content: left;
+  align-items: center;
+  color:#e4e446;
+  padding: 50px;
+}
+
+/******************************CABECERA*****************************************************************/
+.cabecera {
+  padding: 10px;
+  background: rgb(0, 0, 0);
+  color: white;
+  height: 80px;
+  width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+  left: 0; /* Posicionamos la cabecera al lado izquierdo */
+  top: 0; /* Posicionamos la cabecera pegada arriba */
+  position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+  z-index: 200;
+}
+
+/****************************MENU LATERAL***************************************************************/
+
+.sideMenu {
+  width: 100px;
+  height: 100%;
+  background: #e4e446;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  color: white;
+  overflow: hidden;
+}
+
+.optionsSideMenu{
+  margin-top: 30px;
+  display: inline-block;
+  padding-left: 22px;
+}
+
+.optionsSideMenu p{
+  margin-left: 0;
+  margin-top: 0;
+  color: #000000;
+  font-size: 15px;
+  font-family: poppins;
+}
+
+/*********************************  ESQUINA DCHA ****************************************************************/
+
+.esquinaDcha{
+  margin-top: -70px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: right;
+}
+
+.saldoHead {
+  margin-top: 13px;
+  margin-right: 2%;
+}
+
+.icono{
+  margin-right: 10px;
+  margin-top: 7px;
+  display: flex;
+  justify-content: right;
+}
+
+.usuario{
+  margin-top: 20px;
+  text-decoration: none;
+  color:#ffffff;
+  font-size: 25px;
+  transition: all ease .4s;
+}
+
+/**********************************ESQUINA IZQDA***************************************************************/
+.esquinaIzda{
+  display: flex;
+}
+/**********************************PIE DE PAGINA***************************************************************/
+.main-footer {
+  background: rgb(0, 0, 0);
+  color: white;
+  height: 30px;
+  width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+  left: 0; /* Posicionamos la cabecera al lado izquierdo */
+  bottom: 0; /* Posicionamos la cabecera pegada arriba */
+  position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+}
+
+.main-footer p{ 
+  margin: 5px;
+  padding: 0;
+  font-size: 15px;
+  font-family:poppins;
+  color:#ffffff;
+  text-align:center;
+}
+
+/******************** ELEMENTOS INDEX ************************************************************/
+.tops{
+  display: flex;
+  margin-top: 100px;
+  margin-left: 40%;
+}
+
+.searching{
+  display: flex;
+  margin-top: -100px;
+  margin-bottom: 75px;
+}
+
+.searchBar{
+  display: flex;
+  margin-top: 125px;
+  margin-left: 15%;
+  
+}
+
+.searchBar2{
+  display: flex;
+  margin-top: 125px;
+  margin-left: 15%;
+  
+}
+
+.searchBar3{
+  display: flex;
+  margin-top: 125px;
+  margin-left: 15%;
+}
+
+.searchBar .myButton {
+  margin-right: 20px;
+}
+/******************** BOTONES *******************************************************************/
+
+.myButton {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.myButton:hover {
+  background-color: #e4e446;;
+  box-shadow: 0px 15px 20px rgb(202, 170, 64);;
+  color: #fff;
+  transform: translateY(-7px);
+}
+.myButton:active {
+  transform: translateY(-1px);
+}
+
+/******************** COLOCAR PELIS **************************************************************/
+.cartelera {
+  margin: 100px;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+  padding: 0px;
+}
+.cartelera img {
+  margin-left: 30%;
+}
+
+.img_peli{
+  padding-right: 5%;
+  max-width: 100%;  
+  
+}
+
+.cartelera p{
+  margin-top: 15px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  color:#e4e446;
+  text-decoration:none;
+}
+
+
+
+
+/*****************************REGISTER Y LOGIN *******************************************************/
+.registerSection ul {
+  margin-left: 30%;
+  list-style: none;
+  display: inline-block;
+}
+
+.registerSection ul li {
+  padding-top: 10px;
+}
+
+.login {
+  margin-left: 30%;
+}
+
+
+/**********************************LETRAS CAMBIAN A AMARILLAS***************************************/
+.nav {
+  display: flex;
+  justify-content: left;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.nav ul{
+  display: flex;
+  list-style-type: none;
+}
+
+.nav ul li{
+  margin: 0 10px;
+  padding: 0 10px;
+  }
+
+.nav ul li a{
+text-decoration: none;
+color:#ffffff;
+font-size: 30px;
+transition: all ease .4s;
+}
+
+.nav ul li a:hover{
+color:rgb(228, 228, 70);
+}
+
+/***********************************LOGO*************************************************/
+h1{
+margin: 15px;
+padding: 0;
+font-size: 35px;
+text-transform: uppercase;
+font-family:poppins;
+cursor: pointer;
+color:rgb(255, 255, 255);
+}
+
+h1 span{
+display: inline-flex;
+color: rgb(228, 228, 70);
+}
+
+h1 span:nth-child(even){
+overflow: hidden;
+color: rgb(255, 255, 255);
+transition: ease-in-out 0.5s;
+border-bottom: 8px solid rgb(228, 228, 70);
+letter-spacing: -1em;
+}
+
+h1:hover span:nth-child(even){
+letter-spacing: 0;
+cursor: pointer;
+color: rgb(255, 255, 255);
+}
+
+h1:hover span:nth-child(2){
+transition-delay: 0s;
+}
+
+h1:hover span:nth-child(4){
+transition-delay: 0.5s;
+}
+
+h1:hover span:nth-child(6){
+transition-delay: 1s;
+}
+
+/***********************DETALLE PELI*************************************************************/
+
+.imgDetalle {
+  margin-top: 150px;
+  margin-left: 150px;
+}
+
+.dataPeli {
+  display: inline-block;
+  margin-top: 150px;
+  margin-left: 300px;
+}
+
+.content{
+  display: flex;
+}
+
+.posBoton {
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.voto{
+  display: flex;
+  margin-left:175px;
+  margin-top: 10px;
+}
+
+/*******************************COMPRAS******************************************************/
+
+.acceptedval {
+  font-size: 50px;
+  align-items: center;
+  color: #e4e446;
+  display: inline-block;
+  margin-top: 8%;
+  margin-left: 30%;
+}
+
+.acceptedval .myButton {
+  margin-left: 300px;
+}
+
+.comprasinfo {
+  margin-left: 10%;
+  margin-bottom: 0.25%;
+}
+
+.vaciacarrito{
+  margin-top: 5%;
+  margin-left: 85%;
+  margin-bottom: 2%;
+}
+
+
+/*******************************PERFIL******************************************************/
+
+.perfilinfo {
+  margin-top: 8%;
+  margin-left: 10%;
+}
+
+/*Este es para mozilla, abajo para chrome (quitar flechas a input numeros tarjeta)*/
+input[type=number]  {
+  -moz-appearance: textfield;
+  margin: 0;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+/**
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+**/
+
+.cont {
+  margin-top: 8%;
+  margin-left: 10%;
+
+}
+.y {
+  font-size: 30px;
+  color:#e4e446;
+}
+
+.z{
+  color:#fff;
+}

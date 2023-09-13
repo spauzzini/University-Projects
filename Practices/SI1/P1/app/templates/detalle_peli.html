@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+    
+<head>
+    <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+</head>
+
+{% block content %}
+    <div class="content">
+        <div class="imgDetalle">
+            <a href="#">
+                <img src="{{url_for('static', filename=peli.poster)}}" width="300" height="400" alt="Image">
+            </a>
+            <div class="posBoton">
+                <form action="{{ url_for('addToCarrito', id = peli['id']) }}" method="post">
+                    <input class="myButton" type="submit" value="Añadir al carrito">
+                </form>
+            </div>
+        </div>
+        
+        <div class="dataPeli">
+            <h2 class="x">Título: {{peli['titulo']}}</h2>
+            <h2 class="x">Género: {{peli['categoria']}}</h2>
+            <h2 class="x">Director: {{peli['director']}}</h2>
+            <h2 class="x">Año: {{peli['año']}}</h2>
+            <h2 class="x">Precio: {{peli['precio']}}</h2>
+        </div>
+        
+    </div>
+    {% if session['usuario'] %}
+        <div class="voto">
+            <form action="{{ url_for('valoraPeli', id = peli['id']) }}" method="post">
+                <select name="valora">
+                    <option value="" selected disabled hidden>Select</option>
+                    <option value="1">*</option>
+                    <option value="2">**</option>
+                    <option value="3">***</option>
+                    <option value="4">****</option>
+                    <option value="5">*****</option>
+                </select>
+            
+            <input id = myButton class="myButton" type="submit" value="Valorar">
+            </form>
+        </div>
+            
+    {% endif%}
+
+    <div class="voto"><p class="x">Valoración media (sobre 5): {{peli['media']}}</p></div>
+    <div class="voto"><p class="x">Número de valoraciones: {{peli['nvotos']}}</p></div>
+    
+{% endblock %}
+
+</html>

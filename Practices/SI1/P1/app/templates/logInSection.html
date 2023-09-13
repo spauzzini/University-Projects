@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+<head>
+    <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+</head>
+
+{% block content %}
+    <div class="login">
+        <h1>Iniciar sesión</h1>
+        <form action="" method="post" novalidate>
+            <label><b>Username</b></label>
+            
+            {% if lastUser %}
+                <input name="username" type="text" placeholder="Enter Username" value="{{lastUser}}" required >
+            {% else %}
+                <input name="username" type="text" placeholder="Enter username">
+            {% endif %}
+
+            <label><b>Password</b></label>
+            <input name="password" type="password" placeholder="Enter password">
+            <input type="submit" value="Iniciar Sesión">
+            <a href="{{ url_for('register_page')}}">Not registered?</a>
+            <p>{{ message }}</p>
+
+            </form>
+    </div>
+   
+{% endblock %}
+</html>

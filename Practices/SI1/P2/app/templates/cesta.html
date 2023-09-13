@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+    
+<head>
+    <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+</head>
+
+{% block content %}
+    <div class="vaciacarrito">
+        <form action="{{ url_for('emptyCarrito')}}" method="post">
+            <input class="myButton" type="submit" value="Vaciar carrito">
+        </form>
+    </div>
+
+    <div class="comprasinfo">
+        <h2>Películas añadidas: </h2>
+    </div>
+
+    <hr>
+    {% if 'carrito' in session %}
+        {% for item in carro %}
+        <div class="comprasinfo">Título: {{item.nombre}}</div>
+        <div class="comprasinfo">Precio por unidad:{{item.precio}}</div>
+        <div class="comprasinfo">Cantidad:{{item.cantidad}}</div>
+                
+            <div class="comprasinfo">
+                <form action="{{ url_for('addOneCarrito', id = item['id'])}}" method="post">
+                    <input class="myButton" type="submit" value="+">
+                </form> 
+            </div>
+            
+            <div class="comprasinfo">
+                <form action="{{ url_for('delOneCarrito', id = item['id'])}}" method="post">
+                    <input class="myButton" type="submit" value="-">
+                </form> 
+            </div>
+
+            <div class="comprasinfo">
+                <form action="{{ url_for('delFromCarrito', id = item['id'])}}" method="post">
+                    <input class="myButton" type="submit" value="Delete all copies">
+                </form>
+            </div>
+            <hr>
+        {% endfor %}
+        
+        <div class="comprasinfo">
+            <form action="{{ url_for('payCarrito')}}" method="post">
+                <input class="myButton" type="submit" value="Pagar todo">
+            </form>
+        </div>
+        
+   {% endif %}
+{% endblock %}
+
+</html>

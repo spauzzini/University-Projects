@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+    
+<head>
+  <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+</head>
+
+{% block content %}
+<div class="lobby">
+  <div class="searchBar">
+    <form name="form1" action="{{ url_for('search_byGenre') }}" method="post">
+      <p>Búsqueda por género</p>
+      <select name="genero" onchange="form1.submit()" method="post">
+        <option value="" selected disabled hidden>Select</option>
+        <option value="Musical">Musical</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Romance">Romance</option>
+        <option value="Fantasia">Fantasía</option>
+        <option value="Accion">Acción</option>
+        <option value="Sci-fi">Sci-fi</option>
+      </select>
+    </form>
+  </div>
+  <div class="searchBar2">
+    <form action="{{ url_for('search_byName') }}" method="post">
+      <p>Búsqueda por título </p>
+      <input name="nombre" type="text">
+      <input class="myButton" type="submit" value="Buscar">
+    </form>
+  </div>
+
+  <picture class="cartelera">
+    {% for item in movies %}
+      <div class="img_peli"> 
+        <a href="../detallePeli/{{item['id']}}">
+          <img class="img" src="static/{{item.poster}}" width="300" height="400" alt="Image">
+          <p > {{item.titulo}}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </picture>
+</div>
+{% endblock %}
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+    
+<head>
+  <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+</head>
+
+{% block content %}
+<div class="lobby">
+  <div class="tops">
+    <form action="{{ url_for('getTopMovies')}}" method="post">
+      <p>Películas más vendidas por año</p>
+      <input class="myButton" type="submit" value="Ver">
+    </form>
+  </div>
+
+  <div class="searching">
+    <div class="searchBar">
+      <form name="form1" action="{{ url_for('search_byGenre') }}" method="post">
+        <p>Búsqueda por género</p>
+        <select name="genero" onchange="form1.submit()" method="post">
+          <option value="" selected disabled hidden>Select</option>
+          {% for g in genres %}
+            <option value={{g.genre}}>{{g.genre}}</option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+    <div class="searchBar2">
+      <form action="{{ url_for('search_byName') }}" method="post">
+        <p>Búsqueda por título </p>
+        <input name="nombre" type="text">
+        <input class="myButton" type="submit" value="Buscar">
+      </form>
+    </div>
+    <div class="searchBar3">
+      <form name="form2" action="{{url_for('search_ByTopYear') }}" method="post">
+        <p>Top </p>
+        <select name="qtt" method="post">
+          <option value="" selected disabled hidden>Select</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select>
+        <p>Películas más vendidas entre el año</p>
+        <select name="year1" method="post">
+          <option value="" selected disabled hidden>Select</option>
+            <option value=2016>2016</option>
+            <option value=2017>2017</option>
+            <option value=2018>2018</option>
+            <option value=2019>2019</option>
+            <option value=2020>2020</option>
+            <option value=2021>2021</option>
+            <option value=2022>2022</option>
+        </select>
+        <p> y </p>
+        <select name="year2" method="post">
+          <option value="" selected disabled hidden>Select</option>
+            <option value=2016>2016</option>
+            <option value=2017>2017</option>
+            <option value=2018>2018</option>
+            <option value=2019>2019</option>
+            <option value=2020>2020</option>
+            <option value=2021>2021</option>
+            <option value=2022>2022</option>
+        </select>
+        <input class="myButton" type="submit" value="Buscar">
+      </form>
+    </div>
+  </div>
+  <hr>
+
+  <picture class="cartelera">
+    {% for item in movies %}
+      <div class="img_peli"> 
+        <a href="../detallePeli/{{item['movieid']}}">
+          <!--<img class="img" src="static/{{item.poster}}" width="300" height="400" alt="Image">-->
+          <p > {{item.movietitle}}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </picture>
+</div>
+{% endblock %}
+</html>

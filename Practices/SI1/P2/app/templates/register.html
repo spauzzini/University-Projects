@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+
+<head>
+    <title>{% block title %} Virtual Daisy Videoclub {% endblock %}</title>
+  </head>
+
+{% block content %}
+<!--Importamos la librería JQuery-->
+<script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src = "static/js/passwordcheck.js"></script>
+<script src = "static/js/usercheck.js"></script>
+<script src = "static/js/cardcheck.js"></script>
+<script src = "static/js/emailcheck.js"></script>
+<script src = "static/js/addresscheck.js"></script>
+
+    <div class="registerSection">
+        <h2>Register</h2>
+        <ul>
+        <form action="" method="post" novalidate>
+            <li><label><b>Username</b></label></li>
+            <input id="username" name="username" type="text">
+            <div id= "avisoregus5">Mínimo 5 caracteres</div>
+            <div id= "avisoespacio" class="hidden">No puede contener espacios</div>
+            <div id= "avisospec" class="hidden">No puede contener caracteres especiales</div>
+            
+            <li><label><b>Password</b></label></li>
+            <input id = "password" name="password" type="password">
+            
+
+            <div class="x"> Mínimo 6 caracteres <br>
+                <progress id="lenght" value ="0" max="100"></progress>
+            </div>
+            <div id="bajo" class="hidden">Nivel de seguridad: Bajo</div>
+            <div id="medio" class="hidden">Nivel de seguridad: Medio</div>
+            <div id="alto" class="hidden">Nivel de seguridad: Alto</div>
+            <div id="malto" class="hidden">Nivel de seguridad: Muy alto</div>
+            <br>
+            
+            <li><label><b>Password</b></label></li>
+            <input id= "rpassword" name="rpassword" type="password">
+
+            <li><label><b>Email</b></label></li>
+            <input id="email" name="emailAdd" type="email">
+            <div id= "avisoemail">Formato incorrecto</div>
+
+            <li><label><b>CreditCard</b></label></li>
+            <input id="card" name="cCard" type="number">
+            <div id= "avisocard">El número debe tener 16 dígitos</div>
+    
+            <li><label><b>Address</b></label></li>
+            <input id="address" name="address" type="text">
+            <div id= "avisoadd" class="hidden">Máximo 50 caracteres</div>
+
+            <li><input class="myButton" type="submit" value="Register"></li>
+            <p>{{ message }}</p>
+        </form>
+        </ul>
+        
+    </div>
+
+{% endblock %}
+</html>
