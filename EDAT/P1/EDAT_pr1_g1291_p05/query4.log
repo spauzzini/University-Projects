@@ -1,0 +1,6 @@
+query4: Office that sold most products
+ officecode |  sum  
+------------+-------
+ 4          | 33887
+(1 fila)
+

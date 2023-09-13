@@ -1,0 +1,194 @@
+This are the warnings we have obtained when we have passed splint. We have been correcting them until we had no warnings.
+Most of the warnings where repeated in each of the files. 
+We have some because we have ignored the return value of functions like scanf(), fgets() or fflush(). The way to solve this was adding a casting with void.
+Others were because we had dsqleclared some SQLCHAR that were suppose to be a char. To solve this problems we have change the declarations.
+There were a few related to unitializable values. To solve that we initializated them in the declarations. The integers equal to 0 and the chars equal to "\0".
+We had problems in function SQLBindCol() with argument 5. We were passing only sizeof() function. We had to cast this function with (SQLLEN).
+Finally, we had problems because we had exported some functions in the .h files not used outside its own .c files. The way to solved this was to change the declaration of this
+functions from the .h files to the .c ones and add in the begining of the declaration of each function the declaration static. This suppose that menu.h file is useless
+because it hasn't any declaration of any function on it, so we have removed this file.  
+
+eps@labvirteps:~/Escritorio/EDAT_pr2_g2191_p05$ splint -nullpass *.c *.h
+Splint 3.1.2 --- 20 Feb 2018
+
+customers.c: (in function Customer_Find)
+customers.c:124:5: Return value (type int) ignored: scanf("%s", cCon...
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalint to inhibit warning)
+customers.c:158:55: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                       sizeof((cCliName))
+  To allow arbitrary integral types to match long unsigned, use +longintegral.
+customers.c:158:39: Passed storage cCliName not completely defined (*cCliName
+                       is undefined): SQLBindCol (..., cCliName, ...)
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (Use -compdef to inhibit warning)
+customers.c:164:55: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                       sizeof((cConName))
+customers.c:164:39: Passed storage cConName not completely defined (*cConName
+                       is undefined): SQLBindCol (..., cConName, ...)
+customers.c:170:56: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                       sizeof((cLastName))
+customers.c:170:39: Passed storage cLastName not completely defined (*cLastName
+                       is undefined): SQLBindCol (..., cLastName, ...)
+customers.c:176:53: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                       sizeof((cIdent))
+customers.c:176:39: Passed storage cIdent not completely defined (*cIdent is
+                       undefined): SQLBindCol (..., cIdent, ...)
+customers.c:184:37: Format argument 1 to printf (%s) expects char * gets
+                       SQLCHAR [512]: cIdent
+  Type of parameter is not consistent with corresponding code in format string.
+  (Use -formattype to inhibit warning)
+   customers.c:184:22: Corresponding format code
+customers.c:184:45: Format argument 2 to printf (%s) expects char * gets
+                       SQLCHAR [512]: cCliName
+   customers.c:184:25: Corresponding format code
+customers.c:184:55: Format argument 3 to printf (%s) expects char * gets
+                       SQLCHAR [512]: cConName
+   customers.c:184:28: Corresponding format code
+customers.c:184:65: Format argument 4 to printf (%s) expects char * gets
+                       SQLCHAR [512]: cLastName
+   customers.c:184:31: Corresponding format code
+customers.c:200:9: Return value (type int) ignored: fflush(stdout)
+customers.c:201:9: Return value (type int) ignored: fscanf(stdin, "%...
+customers.c:220:5: Return value (type SQLRETURN) ignored: SQLFreeHandle(3,...
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (Use -retvalother to inhibit warning)
+customers.c: (in function Customer_ListProducts)
+customers.c:264:5: Return value (type int) ignored: fflush(stdout)
+customers.c:265:5: Return value (type int) ignored: scanf("%s", cIdent)
+customers.c:267:5: Assignment of arbitrary unsigned integral type to int:
+                      size = strlen(cIdent) - 1
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+customers.c:301:58: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                       sizeof((productname))
+customers.c:307:49: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                       sizeof((n))
+customers.c:331:9: Return value (type int) ignored: fflush(stdout)
+customers.c:332:9: Return value (type int) ignored: fscanf(stdin, "%...
+customers.c: (in function Customer_Balance)
+customers.c:371:26: Variable balance initialized to type char *, expects
+                       SQLCHAR [512]: "\0"
+  Types are incompatible. (Use -type to inhibit warning)
+customers.c:395:5: Return value (type int) ignored: fflush(stdout)
+customers.c:396:5: Return value (type int) ignored: scanf("%s", cIdent)
+customers.c:398:5: Assignment of size_t to int: size = strlen(cIdent)
+customers.c:419:50: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                       sizeof((balance))
+customers.c:425:34: Format argument 1 to printf (%s) expects char * gets
+                       SQLCHAR [512]: balance
+   customers.c:425:28: Corresponding format code
+orders.c: (in function ShowOrderMenu)
+orders.c:52:17: Unreachable code: break
+  This code will never be reached on any possible execution. (Use -unreachable
+  to inhibit warning)
+orders.c: (in function Order_Open)
+orders.c:133:55: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((ordernumber))
+orders.c: (in function Order_Range)
+orders.c:182:28: Variable orderdate initialized to type char *, expects SQLCHAR
+                    [512]: "\0"
+orders.c:183:30: Variable shippeddate initialized to type char *, expects
+                    SQLCHAR [512]: "\0"
+orders.c:209:5: Return value (type int) ignored: fflush(stdout)
+orders.c:221:5: Return value (type char *) ignored: strtok(NULL, " ")
+orders.c:245:55: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((ordernumber))
+orders.c:251:52: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((orderdate))
+orders.c:257:54: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((shippeddate))
+orders.c:265:43: Format argument 2 to printf (%s) expects char * gets SQLCHAR
+                    [512]: orderdate
+   orders.c:265:21: Corresponding format code
+orders.c:265:54: Format argument 3 to printf (%s) expects char * gets SQLCHAR
+                    [512]: shippeddate
+   orders.c:265:24: Corresponding format code
+orders.c:297:5: Function Order_Detail defined more than once
+   dondeestaelfallo.c:157:1: Previous definition of Order_Detail
+orders.c: (in function Order_Detail)
+orders.c:332:5: Return value (type int) ignored: fflush(stdout)
+orders.c:333:5: Return value (type int) ignored: scanf("%s", on)
+orders.c:335:5: Assignment of size_t to int: size = strlen(on)
+orders.c:354:55: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((ordernumber))
+orders.c:360:52: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((orderdate))
+orders.c:366:49: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((status))
+orders.c:372:51: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((expense))
+orders.c:411:54: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((productcode))
+orders.c:417:59: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((quantityordered))
+orders.c:423:53: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                    sizeof((priceeach))
+products.c: (in function ShowProductMenu)
+products.c:44:17: Unreachable code: break
+products.c: (in function Product_Stock)
+products.c:97:26: Variable pCode initialized to type char *, expects SQLCHAR
+                     [512]: "\0"
+products.c:119:5: Return value (type int) ignored: fflush(stdout)
+products.c:120:24: Format argument 1 to scanf (%s) expects char * gets SQLCHAR
+                      [512]: pCode
+   products.c:120:20: Corresponding format code
+products.c:133:61: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                      sizeof((4))
+products.c:133:47: Passed storage &stock not completely defined:
+                      SQLBindCol (..., &stock, ...)
+products.c:150:9: Return value (type int) ignored: fflush(stdout)
+products.c: (in function Product_Find)
+products.c:209:5: Return value (type int) ignored: fflush(stdout)
+products.c:211:24: Format argument 1 to scanf (%s) expects char * gets SQLCHAR
+                      [512]: pName
+   products.c:211:20: Corresponding format code
+products.c:224:52: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                      sizeof((pCode))
+products.c:224:39: Passed storage pCode not completely defined (*pCode is
+                      undefined): SQLBindCol (..., pCode, ...)
+products.c:230:54: Function SQLBindCol expects arg 5 to be SQLLEN gets size_t:
+                      sizeof((pNamCom))
+products.c:230:39: Passed storage pNamCom not completely defined (*pNamCom is
+                      undefined): SQLBindCol (..., pNamCom, ...)
+products.c:240:36: Format argument 1 to printf (%11s) expects char * gets
+                      SQLCHAR [512]: pCode
+   products.c:240:24: Corresponding format code
+products.c:240:43: Format argument 2 to printf (%s) expects char * gets SQLCHAR
+                      [512]: pNamCom
+   products.c:240:29: Corresponding format code
+products.c:244:9: Return value (type SQLRETURN) ignored: SQLCloseCursor(stmt)
+products.c:245:9: Return value (type int) ignored: fflush(stdout)
+menu.h:5:12: File static function ShowMainMenu declared but not used
+  A function is declared but not used. Use /*@unused@*/ in front of function
+  header to suppress message. (Use -fcnuse to inhibit warning)
+customers.h:8:5: Function exported but not used outside customers:
+                    ShowCustomerSubMenu
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (Use -exportlocal to inhibit warning)
+   customers.c:90:1: Definition of ShowCustomerSubMenu
+customers.h:9:5: Function exported but not used outside customers:
+                    Customer_Find
+   customers.c:229:1: Definition of Customer_Find
+customers.h:10:5: Function exported but not used outside customers:
+                     Customer_ListProducts
+   customers.c:363:1: Definition of Customer_ListProducts
+customers.h:11:5: Function exported but not used outside customers:
+                     Customer_Balance
+   customers.c:448:1: Definition of Customer_Balance
+products.h:8:5: Function exported but not used outside products:
+                   ShowProductSubMenu
+   products.c:81:1: Definition of ShowProductSubMenu
+products.h:9:5: Function exported but not used outside products: Product_Stock
+   products.c:169:1: Definition of Product_Stock
+products.h:10:5: Function exported but not used outside products: Product_Find
+   products.c:264:1: Definition of Product_Find
+orders.h:8:5: Function exported but not used outside orders: ShowOrderSubMenu
+   orders.c:92:1: Definition of ShowOrderSubMenu
+orders.h:9:5: Function exported but not used outside orders: Order_Open
+   orders.c:167:1: Definition of Order_Open
+orders.h:10:5: Function exported but not used outside orders: Order_Range
+   orders.c:289:1: Definition of Order_Range
+
+Finished checking --- 79 code warnings

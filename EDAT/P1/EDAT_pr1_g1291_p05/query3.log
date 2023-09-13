@@ -1,0 +1,9 @@
+query3: Employees who report to those employees who report to the director
+ employeenumber | lastname  
+----------------+-----------
+           1088 | Patterson
+           1102 | Bondur
+           1143 | Bow
+           1621 | Nishi
+(4 filas)
+

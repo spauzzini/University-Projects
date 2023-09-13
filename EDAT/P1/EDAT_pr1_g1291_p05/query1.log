@@ -1,0 +1,115 @@
+query-1: Money paid by customers for the 1940 Ford Pickup Track
+ customernumber |          customername          |  amount   
+----------------+--------------------------------+-----------
+            141 | Euro+ Shopping Channel         | 120166.58
+            141 | Euro+ Shopping Channel         | 116208.40
+            124 | Mini Gifts Distributors Ltd.   | 111654.40
+            124 | Mini Gifts Distributors Ltd.   | 111654.40
+            124 | Mini Gifts Distributors Ltd.   | 111654.40
+            148 | Dragon Souveniers, Ltd.        | 105743.00
+            124 | Mini Gifts Distributors Ltd.   | 101244.59
+            124 | Mini Gifts Distributors Ltd.   | 101244.59
+            124 | Mini Gifts Distributors Ltd.   | 101244.59
+            321 | Corporate Gift Ideas Co.       |  85559.12
+            124 | Mini Gifts Distributors Ltd.   |  85410.87
+            124 | Mini Gifts Distributors Ltd.   |  85410.87
+            124 | Mini Gifts Distributors Ltd.   |  85410.87
+            124 | Mini Gifts Distributors Ltd.   |  83598.04
+            124 | Mini Gifts Distributors Ltd.   |  83598.04
+            124 | Mini Gifts Distributors Ltd.   |  83598.04
+            114 | Australian Collectors, Co.     |  82261.22
+            141 | Euro+ Shopping Channel         |  65071.26
+            141 | Euro+ Shopping Channel         |  63843.55
+            141 | Euro+ Shopping Channel         |  59830.55
+            458 | Corrida Auto Replicas, Ltd     |  57131.92
+            124 | Mini Gifts Distributors Ltd.   |  55639.66
+            124 | Mini Gifts Distributors Ltd.   |  55639.66
+            124 | Mini Gifts Distributors Ltd.   |  55639.66
+            363 | Online Diecast Creations Co.   |  55425.77
+            256 | Auto Associés & Cie.           |  53116.99
+            363 | Online Diecast Creations Co.   |  50799.69
+            161 | Technics Stores Inc.           |  50743.65
+            121 | Baane Mini Imports             |  50218.95
+            146 | Saveley & Henriot, Co.         |  49614.72
+            141 | Euro+ Shopping Channel         |  49539.37
+            398 | Tokyo Collectables, Ltd        |  48927.64
+            448 | Scandinavian Gift Ideas        |  48809.90
+            249 | Amica Models & Co.             |  48298.99
+            124 | Mini Gifts Distributors Ltd.   |  47142.70
+            124 | Mini Gifts Distributors Ltd.   |  47142.70
+            124 | Mini Gifts Distributors Ltd.   |  47142.70
+            141 | Euro+ Shopping Channel         |  46895.48
+            321 | Corporate Gift Ideas Co.       |  46781.66
+            114 | Australian Collectors, Co.     |  45864.03
+            124 | Mini Gifts Distributors Ltd.   |  45084.38
+            124 | Mini Gifts Distributors Ltd.   |  45084.38
+            124 | Mini Gifts Distributors Ltd.   |  45084.38
+            114 | Australian Collectors, Co.     |  44894.74
+            148 | Dragon Souveniers, Ltd.        |  44380.15
+            124 | Mini Gifts Distributors Ltd.   |  43369.30
+            124 | Mini Gifts Distributors Ltd.   |  43369.30
+            124 | Mini Gifts Distributors Ltd.   |  43369.30
+            276 | Annas Decorations, Ltd         |  41554.73
+            276 | Annas Decorations, Ltd         |  41554.73
+            146 | Saveley & Henriot, Co.         |  40978.53
+            141 | Euro+ Shopping Channel         |  40206.20
+            146 | Saveley & Henriot, Co.         |  39712.10
+            161 | Technics Stores Inc.           |  38675.13
+            276 | Annas Decorations, Ltd         |  38547.19
+            276 | Annas Decorations, Ltd         |  38547.19
+            455 | Super Scale Inc.               |  38139.18
+            202 | Canadian Gift Exchange Network |  36527.61
+            141 | Euro+ Shopping Channel         |  36251.03
+            141 | Euro+ Shopping Channel         |  36140.38
+            475 | West Coast Collectables Co.    |  36070.47
+            282 | Souveniers And Things Co.      |  35806.73
+            141 | Euro+ Shopping Channel         |  35420.74
+            121 | Baane Mini Imports             |  34638.14
+            339 | Classic Gift Ideas, Inc        |  34606.28
+            398 | Tokyo Collectables, Ltd        |  33967.73
+            249 | Amica Models & Co.             |  33924.24
+            202 | Canadian Gift Exchange Network |  33594.58
+            458 | Corrida Auto Replicas, Ltd     |  33145.56
+            455 | Super Scale Inc.               |  32239.47
+            282 | Souveniers And Things Co.      |  31835.36
+            276 | Annas Decorations, Ltd         |  29848.52
+            276 | Annas Decorations, Ltd         |  29848.52
+            233 | Québec Home Shopping Network   |  29070.38
+            448 | Scandinavian Gift Ideas        |  27966.54
+            452 | Mini Auto Werke                |  27121.90
+            276 | Annas Decorations, Ltd         |  27083.78
+            276 | Annas Decorations, Ltd         |  27083.78
+            129 | Mini Wheels Co.                |  26248.78
+            141 | Euro+ Shopping Channel         |  26155.91
+            282 | Souveniers And Things Co.      |  24013.52
+            333 | Australian Gift Network, Co    |  23936.53
+            129 | Mini Wheels Co.                |  23923.93
+            339 | Classic Gift Ideas, Inc        |  23333.06
+            233 | Québec Home Shopping Network   |  22997.45
+            458 | Corrida Auto Replicas, Ltd     |  22162.61
+            398 | Tokyo Collectables, Ltd        |  22037.91
+            333 | Australian Gift Network, Co    |  21432.31
+            173 | Cambridge Collectables Co.     |  20355.24
+            141 | Euro+ Shopping Channel         |  20009.53
+            121 | Baane Mini Imports             |  17876.32
+            233 | Québec Home Shopping Network   |  16909.84
+            129 | Mini Wheels Co.                |  16537.85
+            452 | Mini Auto Werke                |  15130.97
+            161 | Technics Stores Inc.           |  12692.19
+            173 | Cambridge Collectables Co.     |  11843.45
+            124 | Mini Gifts Distributors Ltd.   |  11044.30
+            124 | Mini Gifts Distributors Ltd.   |  11044.30
+            124 | Mini Gifts Distributors Ltd.   |  11044.30
+            363 | Online Diecast Creations Co.   |  10223.83
+            333 | Australian Gift Network, Co    |   9821.32
+            452 | Mini Auto Werke                |   8807.12
+            475 | West Coast Collectables Co.    |   7678.25
+            114 | Australian Collectors, Co.     |   7565.08
+            256 | Auto Associés & Cie.           |   5759.42
+            148 | Dragon Souveniers, Ltd.        |   3516.04
+            148 | Dragon Souveniers, Ltd.        |   2611.84
+            161 | Technics Stores Inc.           |   2434.25
+            121 | Baane Mini Imports             |   1491.38
+            398 | Tokyo Collectables, Ltd        |    615.45
+(110 filas)
+

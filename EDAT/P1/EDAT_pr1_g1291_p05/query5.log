@@ -1,0 +1,5 @@
+query5: Countries with one (or more) offices that did not sell a single item during year 2003
+ country | count 
+---------+-------
+(0 filas)
+
