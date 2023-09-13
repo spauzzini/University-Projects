@@ -1,0 +1,126 @@
+Práctica 1 de Redes 1
+Grupo 1391
+Pareja 12
+Autoras: Paula Beltrán Marianini y Lucía Gil Maroto
+
+Hemos realizado algunnas modificaciones sobre el fichero practica1.py original:
+
+	- Realizamos una modificación para que en lugar de ser los 50 primeros paquetes, sean
+    cualquier número de paquetes sin limite hasta que se pulse control+c
+
+    - El print logging.info('Control C pulsado') que se ejecutaba antes de printear el último 
+    paquete, lo hemos trasladado para que se printee justo antes del número de paquetes 
+    procesados, de forma que el programa te dice que se ha presionado control+c después de 
+    mostrar todos los paquetes capturados.
+
+    - Al printear el último paquete en la terminal, como aparece en la misma linea que ^C, 
+    aparece el inicio de la línea ligeramente más tabulado que en el resto de los paquetes.
+
+    -   Hemos añadido al printear cada paquete una numeración, por lo que podemos ver de forma 
+    fácil cuántos paquetes capturamos en total, así como tener el orden para comprobar en 
+    Wireshark que son correctos
+
+    - En la parte de codificación, hemos añadido algunas capturas más de las que nos pedían para
+    que las explicaciones en este archivo leeme.txt quedarán más claras para demostrar la 
+    funcionalidad de nuestro código. Las capturas en la carpeta, se mencionan por su nombre a lo 
+    largo de la explicación para saber cuál habría que mirar.
+
+    - Para simplificar la entrega, aportamos capturas de las trazas utilizadas para la 
+    realización de este documento con las explicaciones, pero no las trazas almacenadas (solo 
+    nos piden que adjuntemos la traza para resolver las cuestiones del ejercicio de Wireshark, 
+    que si se adjunta bajo el nombre de practica1.pcap).
+
+
+¿A qué hemos dado respuesta?
+
+	- Normativa de entrega cumplida en su totalidad: 5% --> Realizado: Hemos hecho varias 
+	lecturas del enunciado, comprobando que completabamos cada uno de los puntos sin olvidar
+	ninguno, así como la normativa de entrega, con los correspondientes nombres de los archivos a 
+	entregar.
+		~ Punto 1: comprobamos su funcionalidad en el archivo llamado practica1captura3.png
+
+		~ Punto 2: comprobamos su funcionalidad en el archivo llamado practica1captura4.png
+
+			* Punto 2.1.: Tras pulsar control+c aparece en la terminal el número de paquetes 
+			capturado.
+
+			* Punto 2.2.: Se aprecia en la carpeta el nombre correcto del archivo, así como en 
+			Wireshark que los paquetes se almacenan enteros (lo vemos con el paquete 1, donde 
+			dice que se capturan 234 bytes cuando en la terminal solo se printean los 30 que 
+			hemos pedido que se printeen).
+
+			* Punto 2.3.: Podemos apreciar en la columna de Time de Wireshark que la hora 
+			almacenada en la traza son las 18:38 mientras que la hora de la máquina virtual 
+			(abajo a la derecha) son las 18:08, es decir, almacenamos en la traza media hora más.
+
+		~ Punto 3: comprobamos su funcionalidad en el archivo llamado practica1captura5.png 
+		  (usamos la traza que hemos almacenado para el punto 2).
+
+		~ Punto 4: comprobamos su funcionalidad en varios archivos
+
+			* Punto 4.1.: Para comprobar este punto vamos a ejecutar el programa con nbytes=200 y 
+			nBytes = 6000 (que se encuentra por encima del límite de ETH_FRAME_MAX).
+			En el archivo llamado practica1captura6.png (para 200) apreciamos que para paquetes con mayor
+			número de bytes solo se almacenan los 200 que hemos solicitado (en rojo) mientras
+			que para paquetes con menos de los bytes almacenados se almacenan su número máximo
+			de bytes (en verde). Además, en el archivo llamado practica1captura7.png (para 6000)
+			vemos que aunque accedamos a posiciones del array que no existen el programa no nos
+			lanza ninguna expeccion ni error, ni nos completa con espacios los caracteres que 
+			faltan hasta 6000, por lo que nuestro programa es correcto.
+
+			* Punto 4.2.: comprobamos en el archivo practica1captura.png comparando las salidas 
+			de la terminal, la ventana inferior de Wireshark, así como un conteo de palabras
+			en word.
+
+			* Punto 4.3.: el archivo practica1captura.png se encuentra en esta carpeta.
+		
+
+	- Fichero leeme.txt bien explicado: 5% --> Realizado: este es nuestro archivo leeme.txt con 
+	todos los puntos de la práctica explicados y justificados, así como una explicación de lo 
+	realizado fuera del guión.
+
+	- Contar paquetes de una traza (independientemente del número de paquetes): 10% --> 
+	Realizado: Nuestro programa cuenta de forma correcta el número de paquetes y además printea 
+	el número que corresponde. Hemos comprobado (al ejecutar con el comando --file, para que sea 
+	de una traza) que tanto el número de paquetes de la traza de Wireshark, como el número de 
+	paquetes printeado al final en la terminal, como el id del último paquete a medida que estos 
+	se capturan coinciden. En el archivo practica1captura2.png hemos marcado en rojo los tres 
+	indicadores mencionados para comprobar la corrección en el número de paquetes capturados.
+
+	- Contar paquetes de la interfaz de red: 5% --> Realizado: Nuestro programa cuenta de forma 
+	correcta el número de paquetes y además printea el número que corresponde. Hemos comprobado 
+	(al ejecutar con el comando ----itf, para que sea de una interfaz, en este caso de la ens33) 
+	que tanto el número de paquetes de la traza de Wireshark, como el número de paquetes 
+	printeado al final en la terminal, como el id del último paquete a medida que estos se 
+	capturan coinciden. En el archivo practica1captura2.png hemos marcado en rojo los tres 
+	indicadores mencionados para comprobar la corrección en el número de paquetes capturados.
+
+	- Uso de un único "flujo" para traza e interfaz: 10% --> Realizado: Nuestro programa solo 
+	tiene un proceso y no consta de varios hilos, por tanto, podemos afirmar que es de un único 
+	flujo.
+
+	- Almacenar correctamente el tráfico capturado en vivo una traza: 10% --> Realizado: Hemos 
+	comprobado que todos los bytes de la traza capturada coinciden con lo que indica Wireshark
+	en un conjunto diverso de paquetes.
+
+	- Modificar fecha correctamente: 20% --> Realizado: Hemos comprobado al almacenar y abrir la 
+	traza en Wireshark que el tiempo que aparece en los paquetes se encuentra adelantado media 
+	hora respecto a la hora que marca la máquina virtual. La corrección de esta parte, podemos 
+	comprobarla en el archivo practica1captura.png, donde se aprecia que la hora de la máquina 
+	virtual es las 17:44 mientras que la de los paquetes son las 18:05, es decir, media hora 
+	después.
+
+	- Imprimir los N primeros bytes de un paquete (pruebe para N>15) y validarlo con Wireshark 
+	(captura de pantalla): 15% --> Realizado: Probamos para N=30 bytes y almacenamos la captura 
+	de pantalla como practica1captura.png, completando así la tercera parte del punto 4, que nos 
+	pide una captura de pantalla que muestre ambas salidas para una captura en vivo (online). 
+	Para comprobar que el número de bytes se corresponde, hemos copiado la salida en bytes de la 
+	terminal y la hemos pegado en word, donde se cuentan 30 palabras, luego se printean el número 
+	de bytes que hemos puesto como parámetro del programa al ejecutar. Además, en la captura 
+	también se aprecian los bytes del paquete en Wireshark, que como podemos comprobar a ojo, los 
+	30 primeros coinciden con la salida de la terminal, demostrándose así la corrección del 
+	ejercicio.
+
+	- Ejercicios de captura de tráfico: 20% --> Realizado: Estos ejercicios se encuentran 
+	realizados con sus respectivas explicaciones en el archivo practica1.pdf de la carpeta 
+	comprimida de la práctica 1.
